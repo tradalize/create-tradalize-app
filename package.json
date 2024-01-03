@@ -1,0 +1,24 @@
+{
+  "name": "start-app-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tradalize/start-app-template.git"
+  },
+  "author": "Vladyslav Bezsmertnyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tradalize/start-app-template/issues"
+  },
+  "homepage": "https://github.com/tradalize/start-app-template#readme",
+  "dependencies": {
+    "@tradalize/core": "^0.1.0",
+    "axios": "^1.6.3"
+  }
+}
