@@ -1,6 +1,11 @@
-import { Candle, PositionDirection, Strategy } from "@tradalize/core";
+import {
+  Candle,
+  POSITION_DIRECTION,
+  PositionDirection,
+  Strategy,
+} from "@tradalize/core";
 
-export class SimpleStrategy extends Strategy {
+export class SampleStrategy extends Strategy {
   /**
    * Set this to needed position direction in the `update` method
    * and provided broker will open position on
@@ -16,7 +21,14 @@ export class SimpleStrategy extends Strategy {
   protected closeOnNext: boolean;
 
   update(candle: Candle): void | Promise<void> {
-    // Implement you logic here
-    console.info("Strategy update: ", candle);
+    const dayOfTheWeek = new Date(candle.openTime).getDay();
+
+    if (dayOfTheWeek === 0) {
+      this.openOnNext = POSITION_DIRECTION.Long;
+    }
+
+    if (dayOfTheWeek === 5) {
+      this.closeOnNext = true;
+    }
   }
 }

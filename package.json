@@ -18,7 +18,14 @@
   },
   "homepage": "https://github.com/tradalize/start-app-template#readme",
   "dependencies": {
-    "@tradalize/core": "^0.1.0",
-    "axios": "^1.6.3"
+    "@tradalize/core": "^0.1.4",
+    "axios": "^1.6.3",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.3",
+    "postgres": "^3.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "drizzle-kit": "^0.20.9"
   }
 }

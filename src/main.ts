@@ -1,16 +1,23 @@
-import { BinanceFuturesDatafeed, Mainframe } from "@tradalize/core";
-import { SimpleStrategy } from "./strategy";
-import { PaperBroker } from "./broker";
+import "dotenv/config";
+import {
+  BinanceFuturesDatafeed,
+  Mainframe,
+  MemoryBroker,
+  getTradesSummary,
+} from "@tradalize/core";
+import { SampleStrategy } from "./strategies/simple.strategy.js";
 
 const datafeed = new BinanceFuturesDatafeed({
   symbol: "BTCUSDT",
-  interval: "1d",
-  startTime: new Date("01 01 2020"),
+  timeframe: "1d",
+  startTime: new Date("01 01 2023"),
 });
 
-const broker = new PaperBroker();
-const strategy = new SimpleStrategy(broker);
+const broker = new MemoryBroker();
+const strategy = new SampleStrategy(broker);
 
 const mf = new Mainframe(datafeed, strategy);
 
 await mf.backtest();
+
+console.info(getTradesSummary(broker.positionsList.toArray()));
