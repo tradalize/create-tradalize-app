@@ -5,7 +5,7 @@
   "main": "src/main.ts",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "tsx"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.10.6",
-    "drizzle-kit": "^0.20.9"
+    "drizzle-kit": "^0.20.9",
+    "tsx": "^4.7.0"
   }
 }
