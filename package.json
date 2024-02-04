@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/tradalize/create-tradalize-app#readme",
   "dependencies": {
-    "@tradalize/core": "^0.1.4",
+    "@tradalize/core": "^0.2.0",
+    "@tradalize/drizzle-adapter": "^0.2.4",
     "axios": "^1.6.3",
     "dotenv": "^16.3.1",
     "drizzle-orm": "^0.29.3",
